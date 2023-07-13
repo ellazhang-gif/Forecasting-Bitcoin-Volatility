@@ -17,26 +17,10 @@ with 1456 observations in total provided by Yahoo:
 First, I looked at the time series plots for Bitcoin-USD and the first
 difference of Bitcoin-USD.
 
-![image](Picture19.png){width="60%"}
-
 From both plots, we notice that there is level-dependent volatility, and
 there is also an exponential trend of the price of BTC-USD over time,
 which means I should probably take logs. Here are the time series plots
 for log BTC-USD and the first difference of log BTC-USD.
-
-<figure id="fig:test">
-<figure id="fig:sub1">
-<img src="Picture3.png" />
-<figcaption>Time Series Plot of Log BTC-USD</figcaption>
-</figure>
-<figure id="fig:sub2">
-<img src="Picture4.png" />
-<figcaption>Time Series Plot of First Difference of Log
-BTC-USD</figcaption>
-</figure>
-<figcaption>Time Series Plot of First Difference of Log
-BTC-USD</figcaption>
-</figure>
 
 After taking logs, I removed the level-dependent volatility as well as
 linearize the trend. I will work with the logged data rather than the
@@ -53,18 +37,6 @@ towards the safety of cash.
 
 To start with, I have the following ACF and PACF plots for log BTC-USD.
 
-<figure id="fig:test">
-<figure id="fig:sub1">
-<img src="Picture5.png" />
-<figcaption>ACF Plot of Log BTC-USD</figcaption>
-</figure>
-<figure id="fig:sub2">
-<img src="Picture6.png" />
-<figcaption>PACF Plot of Log BTC-USD</figcaption>
-</figure>
-<figcaption>PACF Plot of Log BTC-USD</figcaption>
-</figure>
-
 The series do not appear to be stationary. The autocorrelation of log
 BTC-USD keeps hanging for many lags, and PACF cuts off beyond lag 1
 whose partial autocorrelation is around 1. These are evidence that the
@@ -72,25 +44,10 @@ series are not stationary, which indicates that we should try
 differencing the data. After differencing the log BTC-USD time series, I
 got the following ACF and PACF plots.
 
-<figure id="fig:test">
-<figure id="fig:sub1">
-<img src="Picture7.png" />
-<figcaption>ACF Plot of First Difference of Log BTC-USD</figcaption>
-</figure>
-<figure id="fig:sub2">
-<img src="Picture8.png" />
-<figcaption>PACF Plot of First Difference of Log BTC-USD</figcaption>
-</figure>
-<figcaption>PACF Plot of First Difference of Log BTC-USD</figcaption>
-</figure>
-
 In both the ACF and PACF plots, the autocorrelation or partial
 autocorrelation are not statistically significant in many lags. To make
 sure the time series of first difference of log BTC-USD is stationary, I
 difference this series again and get the following ACF plot.
-
-![ACF Plot of the Second Difference of Log
-BTC-USD](Picture9.png){width="50%"}
 
 From the ACF plot of the second difference of log BTC-ISD, the lag 1
 autocorrelation is statistically negative, which is a sign of
@@ -105,7 +62,7 @@ on the time series plot of differenced log BTC-USD, I choose not to
 include a constant in the ARIMA model.\
 For ARIMA(p,1,q) models without constant, the following formula should
 be used to calculate AICc:
-$$AICc=N log \frac{SS}{N} + \frac{2(p+q+1)}{N-p-q-2}\cdot N$$
+AICc=N log \frac{SS}{N} + \frac{2(p+q+1)}{N-p-q-2}\cdot N
 
 where N is 1456-1=1455, p and q are subject to change\
 \
