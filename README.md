@@ -17,17 +17,7 @@ with 1456 observations in total provided by Yahoo:
 First, I looked at the time series plots for Bitcoin-USD and the first
 difference of Bitcoin-USD.
 
-<figure id="fig:test">
-<figure id="fig:sub1">
-<img src="Picture1.png" />
-<figcaption>Time Series Plot of BTC-USD</figcaption>
-</figure>
-<figure id="fig:sub2">
-<img src="Picture2.png" />
-<figcaption>Time Series Plot of First Difference of BTC-USD</figcaption>
-</figure>
-<figcaption>Time Series Plot of First Difference of BTC-USD</figcaption>
-</figure>
+![image](Picture19.png){width="60%"}
 
 From both plots, we notice that there is level-dependent volatility, and
 there is also an exponential trend of the price of BTC-USD over time,
